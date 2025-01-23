@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app_ui/splash_screen.dart';
+import 'package:grocery_app_ui/views/splash_screen.dart';
 
 void main() {
   runApp(const MainApp());

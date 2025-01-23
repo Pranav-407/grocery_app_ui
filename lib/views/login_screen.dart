@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grocery_app_ui/views/home_screen.dart';
 import 'package:grocery_app_ui/widgets/custom_textfield.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -88,7 +89,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
                   },
                   child: Container(
                     height: 67,
@@ -118,13 +123,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: GoogleFonts.dmSans(
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(24, 23, 37, 1)
+                        color: Color.fromRGBO(24, 23, 37, 1),
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        
-                      },
+                      onTap: () {},
                       child: Text(
                         "Sign Up",
                         style: GoogleFonts.dmSans(

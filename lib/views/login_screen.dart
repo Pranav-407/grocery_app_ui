@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:grocery_app_ui/views/home_screen.dart';
+import 'package:grocery_app_ui/widgets/custom_bottom_nav_bar.dart';
 import 'package:grocery_app_ui/widgets/custom_textfield.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onTap: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
+                        builder: (context) => const BottomNavBarScreen(),
                       ),
                     );
                   },

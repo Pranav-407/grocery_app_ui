@@ -83,151 +83,160 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(width: double.infinity, height: 10),
-              Transform.scale(
-                scale: 0.7,
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: SvgPicture.asset("assets/svg/login_logo.svg"),
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(width: double.infinity, height: 10),
+                Transform.scale(
+                  scale: 0.7,
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: SvgPicture.asset("assets/svg/login_logo.svg"),
+                  ),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset("assets/svg/location.svg"),
-                  SizedBox(width: 5.5),
-                  Text(
-                    "Pune, Maharashtra",
-                    style: GoogleFonts.dmSans(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(76, 79, 77, 1)),
-                  )
-                ],
-              ),
-              SizedBox(height: 25),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(242, 243, 242, 1),
-                      borderRadius: BorderRadius.circular(15)),
-                  height: 52,
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset("assets/svg/location.svg"),
+                    SizedBox(width: 5.5),
+                    Text(
+                      "Pune, Maharashtra",
+                      style: GoogleFonts.dmSans(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromRGBO(76, 79, 77, 1)),
+                    )
+                  ],
+                ),
+                SizedBox(height: 25),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(242, 243, 242, 1),
+                        borderRadius: BorderRadius.circular(15)),
+                    height: 52,
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset("assets/svg/search.svg"),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 12),
+                              child: TextField(
+                                style: GoogleFonts.dmSans(color: Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500),
+                                controller: searchController,
+                                decoration: InputDecoration(
+      
+                                    border: UnderlineInputBorder(
+                                        borderSide: BorderSide.none),
+                                    hintText: "Search Store",
+                                    hintStyle: GoogleFonts.dmSans(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500)),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        // color: Colors.amber,
+                        borderRadius: BorderRadius.circular(8)),
+                    height: 115,
+                    child: Image.asset('assets/images/banner.jpg'),
+                  ),
+                ),
+                SizedBox(height: 30),
+                HeaderItem(label: "Exclusive Offer"),
+                HorizonalItems(items: exclusiveOffers),
+                SizedBox(height: 30),
+                HeaderItem(label: "Best Selling"),
+                HorizonalItems(items: bestSelling),
+                SizedBox(height: 30),
+                HeaderItem(label: "Groceries"),
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        SvgPicture.asset("assets/svg/search.svg"),
-                        SizedBox(width: 10),
-                        Expanded(
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(248, 164, 76, 0.3),
+                              borderRadius: BorderRadius.circular(18)),
+                          height: 105,
+                          width: 250,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: TextField(
-                              controller: searchController,
-                              decoration: InputDecoration(
-                                  border: UnderlineInputBorder(
-                                      borderSide: BorderSide.none),
-                                  hintText: "Search Store",
-                                  hintStyle: GoogleFonts.dmSans(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500)),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 17, vertical: 15),
+                            child: Row(
+                              children: [
+                                Image.asset("assets/images/pulses.png"),
+                                SizedBox(width: 15),
+                                Text(
+                                  "Pulses",
+                                  style: GoogleFonts.dmSans(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromRGBO(62, 66, 63, 1)),
+                                )
+                              ],
                             ),
                           ),
-                        )
+                        ),
+                        SizedBox(width: 15),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(83, 177, 117, 0.4),
+                              borderRadius: BorderRadius.circular(18)),
+                          height: 105,
+                          width: 250,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 17, vertical: 15),
+                            child: Row(
+                              children: [
+                                Image.asset("assets/images/rice.png"),
+                                SizedBox(width: 15),
+                                Text(
+                                  "Rice",
+                                  style: GoogleFonts.dmSans(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color.fromRGBO(62, 66, 63, 1),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                  decoration: BoxDecoration(
-                      // color: Colors.amber,
-                      borderRadius: BorderRadius.circular(8)),
-                  height: 115,
-                  child: Image.asset('assets/images/banner.jpg'),
-                ),
-              ),
-              SizedBox(height: 30),
-              HeaderItem(label: "Exclusive Offer"),
-              HorizonalItems(items: exclusiveOffers),
-              SizedBox(height: 30),
-              HeaderItem(label: "Best Selling"),
-              HorizonalItems(items: bestSelling),
-              SizedBox(height: 30),
-              HeaderItem(label: "Groceries"),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Color.fromRGBO(248, 164, 76, 0.3),
-                            borderRadius: BorderRadius.circular(18)),
-                        height: 105,
-                        width: 250,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 17, vertical: 15),
-                          child: Row(
-                            children: [
-                              Image.asset("assets/images/pulses.png"),
-                              SizedBox(width: 15),
-                              Text(
-                                "Pulses",
-                                style: GoogleFonts.dmSans(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color.fromRGBO(62, 66, 63, 1)),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 15),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Color.fromRGBO(83, 177, 117, 0.4),
-                            borderRadius: BorderRadius.circular(18)),
-                        height: 105,
-                        width: 250,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 17, vertical: 15),
-                          child: Row(
-                            children: [
-                              Image.asset("assets/images/rice.png"),
-                              SizedBox(width: 15),
-                              Text(
-                                "Rice",
-                                style: GoogleFonts.dmSans(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color.fromRGBO(62, 66, 63, 1),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              HorizonalItems(items: groceries),
-              SizedBox(height: 30),
-            ],
+                HorizonalItems(items: groceries),
+                SizedBox(height: 30),
+              ],
+            ),
           ),
         ),
       ),

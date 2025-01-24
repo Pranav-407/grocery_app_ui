@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grocery_app_ui/views/item_description_screen.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,21 +19,33 @@ class _HomeScreenState extends State<HomeScreen> {
       "image": "assets/images/banana.png",
       "title": "Organic Bananas",
       "subTitle": "7pcs, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/apple.png",
       "title": "Red Apple",
       "subTitle": "1kg, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/banana.png",
       "title": "Organic Bananas",
       "subTitle": "7pcs, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/apple.png",
       "title": "Red Apple",
       "subTitle": "1kg, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
   ];
 
@@ -40,44 +54,68 @@ class _HomeScreenState extends State<HomeScreen> {
       "image": "assets/images/bell_pepper_red.png",
       "title": "Bell Pepper Red",
       "subTitle": "1kg, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/ginger.png",
       "title": "Ginger",
       "subTitle": "250gm, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/bell_pepper_red.png",
       "title": "Bell Pepper Red",
       "subTitle": "1kg, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/ginger.png",
       "title": "Ginger",
       "subTitle": "250gm, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
   ];
-  
+
   List groceries = [
     {
       "image": "assets/images/banana.png",
       "title": "Orgaanic Bananas",
       "subTitle": "7pcs, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/chicken.png",
       "title": "Broiler Chicken",
       "subTitle": "1Kg, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/banana.png",
       "title": "Orgaanic Bananas",
       "subTitle": "7pcs, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "image": "assets/images/chicken.png",
       "title": "Broiler Chicken",
       "subTitle": "1Kg, Priceg",
+      "price": "₹60.00",
+      "description":
+          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
     }
   ];
 
@@ -108,9 +146,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text(
                       "Pune, Maharashtra",
                       style: GoogleFonts.dmSans(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          color: Color.fromRGBO(76, 79, 77, 1)),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        color: Color.fromRGBO(76, 79, 77, 1),
+                      ),
                     )
                   ],
                 ),
@@ -133,12 +172,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 12),
                               child: TextField(
-                                style: GoogleFonts.dmSans(color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500),
+                                style: GoogleFonts.dmSans(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500),
                                 controller: searchController,
                                 decoration: InputDecoration(
-      
                                     border: UnderlineInputBorder(
                                         borderSide: BorderSide.none),
                                     hintText: "Search Store",
@@ -195,9 +234,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   "Pulses",
                                   style: GoogleFonts.dmSans(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w700,
-                                      color: Color.fromRGBO(62, 66, 63, 1)),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color.fromRGBO(62, 66, 63, 1),
+                                  ),
                                 )
                               ],
                             ),
@@ -289,66 +329,76 @@ class _HorizonalItemsState extends State<HorizonalItems> {
     return Padding(
       padding: const EdgeInsets.only(left: 20, top: 20),
       child: SizedBox(
-        height: 250,
+        height: 260,
         child: ListView.builder(
           itemCount: widget.items.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: Container(
-                height: 250,
-                width: 175,
-                decoration: BoxDecoration(
+            return GestureDetector(
+              onTap: () => pushScreen(
+                context,
+                screen: ItemDescriptionScreen(
+                  itemDescription: widget.items[index],
+                ),
+                withNavBar: false,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: Container(
+                  height: 260,
+                  width: 175,
+                  decoration: BoxDecoration(
                     border: Border.all(
                       color: Color.fromRGBO(226, 226, 226, 1),
                     ),
-                    borderRadius: BorderRadius.circular(18)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: SizedBox(
-                          height: 130,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 22),
-                            child: Image.asset(widget.items[index]["image"]),
-                          ),
-                        ),
-                      ),
-                      Text(
-                        widget.items[index]["title"],
-                        style: GoogleFonts.dmSans(
-                            fontSize: 16, fontWeight: FontWeight.w700),
-                      ),
-                      Text(
-                        widget.items[index]["subTitle"],
-                        style: GoogleFonts.dmSans(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromRGBO(124, 124, 124, 1)),
-                      ),
-                      Spacer(),
-                      Row(
-                        children: [
-                          Text(
-                            "₹60.00",
-                            style: GoogleFonts.dmSans(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Align(
+                          alignment: Alignment.center,
+                          child: SizedBox(
+                            height: 130,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 22),
+                              child: Image.asset(widget.items[index]["image"]),
                             ),
                           ),
-                          Spacer(),
-                          SvgPicture.asset("assets/svg/add.svg"),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 15,
-                      )
-                    ],
+                        ),
+                        Text(
+                          widget.items[index]["title"],
+                          style: GoogleFonts.dmSans(
+                              fontSize: 16, fontWeight: FontWeight.w700),
+                        ),
+                        Text(
+                          widget.items[index]["subTitle"],
+                          style: GoogleFonts.dmSans(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromRGBO(124, 124, 124, 1)),
+                        ),
+                        Spacer(),
+                        Row(
+                          children: [
+                            Text(
+                              widget.items[index]["price"],
+                              style: GoogleFonts.dmSans(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Spacer(),
+                            SvgPicture.asset("assets/svg/add.svg"),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 15,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -359,5 +409,3 @@ class _HorizonalItemsState extends State<HorizonalItems> {
     );
   }
 }
-
-

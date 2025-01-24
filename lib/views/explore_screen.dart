@@ -86,17 +86,26 @@ class ExploreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            "Find Products",
-            style: GoogleFonts.dmSans(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
+      child: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              backgroundColor: Colors.white,
+              floating: true,
+              pinned: true,
+              snap: false,
+              elevation: 0,
+              centerTitle: true,
+              title: Text(
+                "Find Products",
+                style: GoogleFonts.dmSans(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
-          ),
-        ),
+          ];
+        },
         body: Column(
           children: [
             SizedBox(height: 10, width: double.infinity),
@@ -140,17 +149,22 @@ class ExploreScreen extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 10),
             Expanded(
-              child: GridView.builder(
-                padding: const EdgeInsets.all(20),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 15,
-                  crossAxisSpacing: 15,
-                  childAspectRatio: 0.9,
+              child: ScrollConfiguration(
+                behavior:
+                    ScrollConfiguration.of(context).copyWith(overscroll: false),
+                child: GridView.builder(
+                  padding: const EdgeInsets.all(20),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 15,
+                    childAspectRatio: 0.9,
+                  ),
+                  itemCount: gridData.length,
+                  itemBuilder: (context, index) => GridItem(gridData[index]),
                 ),
-                itemCount: gridData.length,
-                itemBuilder: (context, index) => GridItem(gridData[index]),
               ),
             )
           ],

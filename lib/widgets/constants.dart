@@ -212,3 +212,30 @@ List favourite = [
     "price": "₹65.00",
   }
 ];
+
+List myCart = [
+  {
+    "image": "assets/images/apple.png",
+    "title": "Naturel Red Apple",
+    "subTitle": "1Kg, Price",
+    "price": "₹60.00",
+  },
+  {
+    "image": "assets/images/ginger.png",
+    "title": "Ginger",
+    "subTitle": "250g, Price",
+    "price": "₹55.00",
+  },
+  {
+    "image": "assets/images/banana.png",
+    "title": "Organic Bananas",
+    "subTitle": "6pcs, Price",
+    "price": "₹35.00",
+  },
+  {
+    "image": "assets/images/bell_pepper_red.png",
+    "title": "Bell Pepper Red",
+    "subTitle": "1Kg, Price",
+    "price": "₹75.00",
+  }
+];

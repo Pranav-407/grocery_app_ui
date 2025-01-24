@@ -1,86 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grocery_app_ui/widgets/constants.dart';
 
 class ExploreScreen extends StatelessWidget {
   ExploreScreen({super.key});
 
   TextEditingController searchController = TextEditingController();
-
-  final List<Map<String, dynamic>> gridData = [
-    {
-      'imagePath': "assets/images/fresh_fruits_and_vegetables.png",
-      "backgroundColor": Color.fromRGBO(83, 177, 117, 0.1),
-      "borderColor": Color.fromRGBO(83, 177, 117, 0.7),
-      "title": "Fresh Fruits & Vegetable"
-    },
-    {
-      'imagePath': "assets/images/cooking_oil_and_ghee.png",
-      "backgroundColor": Color.fromRGBO(248, 164, 76, 0.1),
-      "borderColor": Color.fromRGBO(248, 164, 76, 0.7),
-      "title": "Cooking Oil & Ghee"
-    },
-    {
-      'imagePath': "assets/images/meat_and_fish.png",
-      "backgroundColor": Color.fromRGBO(247, 165, 147, 0.25),
-      "borderColor": Color.fromRGBO(247, 165, 147, 1),
-      "title": "Meat & Fish"
-    },
-    {
-      'imagePath': "assets/images/bakery_and_snacks.png",
-      "backgroundColor": Color.fromRGBO(211, 176, 224, 0.25),
-      "borderColor": Color.fromRGBO(211, 176, 224, 1),
-      "title": "Bakery & Snacks"
-    },
-    {
-      'imagePath': "assets/images/dairy_and_eggs.png",
-      "backgroundColor": Color.fromRGBO(253, 229, 152, 0.25),
-      "borderColor": Color.fromRGBO(253, 229, 152, 1),
-      "title": "Dairy & Eggs"
-    },
-    {
-      'imagePath': "assets/images/bevrages.png",
-      "backgroundColor": Color.fromRGBO(183, 223, 245, 0.25),
-      "borderColor": Color.fromRGBO(183, 223, 245, 1),
-      "title": "Beverages"
-    },
-    {
-      'imagePath': "assets/images/fresh_fruits_and_vegetables.png",
-      "backgroundColor": Color.fromRGBO(83, 177, 117, 0.1),
-      "borderColor": Color.fromRGBO(83, 177, 117, 0.7),
-      "title": "Fresh Fruits & Vegetable"
-    },
-    {
-      'imagePath': "assets/images/cooking_oil_and_ghee.png",
-      "backgroundColor": Color.fromRGBO(248, 164, 76, 0.1),
-      "borderColor": Color.fromRGBO(248, 164, 76, 0.7),
-      "title": "Cooking Oil & Ghee"
-    },
-    {
-      'imagePath': "assets/images/meat_and_fish.png",
-      "backgroundColor": Color.fromRGBO(247, 165, 147, 0.25),
-      "borderColor": Color.fromRGBO(247, 165, 147, 1),
-      "title": "Meat & Fish"
-    },
-    {
-      'imagePath': "assets/images/bakery_and_snacks.png",
-      "backgroundColor": Color.fromRGBO(211, 176, 224, 0.25),
-      "borderColor": Color.fromRGBO(211, 176, 224, 1),
-      "title": "Bakery & Snacks"
-    },
-    {
-      'imagePath': "assets/images/dairy_and_eggs.png",
-      "backgroundColor": Color.fromRGBO(253, 229, 152, 0.25),
-      "borderColor": Color.fromRGBO(253, 229, 152, 1),
-      "title": "Dairy & Eggs"
-    },
-    {
-      'imagePath': "assets/images/bevrages.png",
-      "backgroundColor": Color.fromRGBO(183, 223, 245, 0.25),
-      "borderColor": Color.fromRGBO(183, 223, 245, 1),
-      "title": "Beverages"
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {

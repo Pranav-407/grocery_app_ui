@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_app_ui/views/item_description_screen.dart';
+import 'package:grocery_app_ui/widgets/constants.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,112 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController searchController = TextEditingController();
-
-  List exclusiveOffers = [
-    {
-      "image": "assets/images/banana.png",
-      "title": "Organic Bananas",
-      "subTitle": "7pcs, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/apple.png",
-      "title": "Red Apple",
-      "subTitle": "1kg, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/banana.png",
-      "title": "Organic Bananas",
-      "subTitle": "7pcs, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/apple.png",
-      "title": "Red Apple",
-      "subTitle": "1kg, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-  ];
-
-  List bestSelling = [
-    {
-      "image": "assets/images/bell_pepper_red.png",
-      "title": "Bell Pepper Red",
-      "subTitle": "1kg, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/ginger.png",
-      "title": "Ginger",
-      "subTitle": "250gm, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/bell_pepper_red.png",
-      "title": "Bell Pepper Red",
-      "subTitle": "1kg, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/ginger.png",
-      "title": "Ginger",
-      "subTitle": "250gm, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-  ];
-
-  List groceries = [
-    {
-      "image": "assets/images/banana.png",
-      "title": "Orgaanic Bananas",
-      "subTitle": "7pcs, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/chicken.png",
-      "title": "Broiler Chicken",
-      "subTitle": "1Kg, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/banana.png",
-      "title": "Orgaanic Bananas",
-      "subTitle": "7pcs, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    },
-    {
-      "image": "assets/images/chicken.png",
-      "title": "Broiler Chicken",
-      "subTitle": "1Kg, Priceg",
-      "price": "₹60.00",
-      "description":
-          "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 1500s, but also the leap into electronic typesetting, remaining essentially unchanged."
-    }
-  ];
-
+  
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

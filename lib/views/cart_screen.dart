@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grocery_app_ui/views/checkout_screen.dart';
 import 'package:grocery_app_ui/widgets/constants.dart';
 
 class CartScreen extends StatefulWidget {
@@ -213,53 +214,54 @@ class _CartScreenState extends State<CartScreen> {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 67,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(19),
-                        color: Color.fromRGBO(83, 177, 117, 1),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                        child: Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            SizedBox(width: 45,),
-                            Center(
+                child: GestureDetector(
+                  onTap: () {
+                    showModalBottomSheet(context: context, builder: (context) => CheckoutBottomSheet(),);
+                  },
+                  child: Container(
+                    height: 67,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(19),
+                      color: Color.fromRGBO(83, 177, 117, 1),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SizedBox(width: 45,),
+                          Center(
+                            child: Text(
+                              "Go To Checkout",
+                              style: GoogleFonts.dmSans(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          Spacer(),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 15),
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(4),
+                              color: Color.fromRGBO(72, 158, 103, 1)
+                            ),
+                            child: Center(
                               child: Text(
-                                "Go To Checkout",
+                                "\$${calculateCartTotal().toStringAsFixed(2)}",
                                 style: GoogleFonts.dmSans(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white),
                               ),
                             ),
-                            Spacer(),
-                            Container(
-                              margin: EdgeInsets.symmetric(vertical: 15),
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                color: Color.fromRGBO(72, 158, 103, 1)
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "\$${calculateCartTotal().toStringAsFixed(2)}",
-                                  style: GoogleFonts.dmSans(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                          )
+                        ],
                       ),
                     ),
-                  ],
+                  ),
                 ),
               )
             ],

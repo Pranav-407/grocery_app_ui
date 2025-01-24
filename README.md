@@ -1,3 +1,3 @@
-# grocery_app_ui
+# Grocery App UI
 
-A new Flutter project.
+Practice Screens used to lear the new Widgets in the Flutter.
